@@ -1,11 +1,20 @@
 #include "Encounter.h"
 
-Encounter::Encounter(Region r) {
+Encounter::Encounter(Region r) : description(*this), environment(*this), highlight(*this) {
 	srand(time(NULL));
 	region = r;
 	while (region == Region::Random) { // Random is not allowed, reroll
 		region = Region(rand() % static_cast<int>(Region::Random));
 	}
+
+	srand(time(NULL));
+	// print random member of each vector
+	if (description.getDescriptionVectorSize() > 0)
+		std::cout << description.getDescriptionVector()[rand() % description.getDescriptionVectorSize()] << " ";
+	if (environment.getEnvironmentVectorSize() > 0)
+		std::cout << environment.getEnvironmentVector()[rand() % environment.getEnvironmentVectorSize()] << " ";
+	if (highlight.getHighlightVectorSize() > 0)
+		std::cout << highlight.getHighlightVector()[rand() % highlight.getHighlightVectorSize()] << std::endl << std::endl;
 }
 
 Encounter::Region Encounter::getRegion() {

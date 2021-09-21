@@ -5,6 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
+#include <string>
+
+#include "Description.h"
+#include "Environment.h"
+#include "Highlight.h"
 
 class Encounter
 {
@@ -35,6 +41,11 @@ public:
 
 private:
 	Region region = Region::Random;
+
+	Description description;
+	Environment environment;
+	Highlight highlight;
+
 };
 
 #endif 

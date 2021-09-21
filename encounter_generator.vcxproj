@@ -139,11 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Description.cpp" />
     <ClCompile Include="Encounter.cpp" />
     <ClCompile Include="encounter_generator.cpp" />
+    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="Highlight.cpp" />
+    <ClCompile Include="Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Description.h" />
     <ClInclude Include="Encounter.h" />
+    <ClInclude Include="Environment.h" />
+    <ClInclude Include="Highlight.h" />
+    <ClInclude Include="Object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
