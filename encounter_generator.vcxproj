@@ -144,7 +144,6 @@
     <ClCompile Include="encounter_generator.cpp" />
     <ClCompile Include="Environment.cpp" />
     <ClCompile Include="Highlight.cpp" />
-    <ClCompile Include="Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Description.h" />

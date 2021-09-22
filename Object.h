@@ -1,6 +1,8 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
+// Useful headers for various other classes
+
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
