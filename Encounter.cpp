@@ -1,20 +1,26 @@
 #include "Encounter.h"
 
-Encounter::Encounter(Region r) : description(*this), environment(*this), highlight(*this) {
+Encounter::Encounter(Region r) {
 	srand(time(NULL));
 	region = r;
 	while (region == Region::Random) { // Random is not allowed, reroll
 		region = Region(rand() % static_cast<int>(Region::Random));
 	}
 
-	srand(time(NULL));
+	// instantiate other classes
+	description = new Description(this->enumToText());
+	environment = new Environment(this->enumToText());
+	highlight = new Highlight(this->enumToText());
+
+	std::cout << "Generated \"" << this->enumToText() << "\" Biome:\n\n";
+
 	// print random member of each vector
-	if (description.getDescriptionVectorSize() > 0)
-		std::cout << description.getDescriptionVector()[rand() % description.getDescriptionVectorSize()] << " ";
-	if (environment.getEnvironmentVectorSize() > 0)
-		std::cout << environment.getEnvironmentVector()[rand() % environment.getEnvironmentVectorSize()] << " ";
-	if (highlight.getHighlightVectorSize() > 0)
-		std::cout << highlight.getHighlightVector()[rand() % highlight.getHighlightVectorSize()] << std::endl << std::endl;
+	if (description->getDescriptionVectorSize() > 0)
+		std::cout << description->getDescriptionVector()[rand() % description->getDescriptionVectorSize()] << " ";
+	if (environment->getEnvironmentVectorSize() > 0)
+		std::cout << environment->getEnvironmentVector()[rand() % environment->getEnvironmentVectorSize()] << " ";
+	if (highlight->getHighlightVectorSize() > 0)
+		std::cout << highlight->getHighlightVector()[rand() % highlight->getHighlightVectorSize()] << std::endl << std::endl;
 }
 
 Encounter::Region Encounter::getRegion() {
