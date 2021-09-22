@@ -1,3 +1,2 @@
-﻿  Encounter.cpp
-C:\Users\morit\source\repos\encounter_generator\Encounter.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  encounter_generator.cpp
   encounter_generator.vcxproj -> C:\Users\morit\source\repos\encounter_generator\Debug\encounter_generator.exe
