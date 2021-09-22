@@ -3,13 +3,10 @@
 
 #include "Object.h"
 
-class Encounter;
-
-class Highlight :
-    public Object
+class Highlight
 {
 public:
-    Highlight(Encounter);
+    Highlight(std::string);
 
     int getHighlightVectorSize();
     std::vector<std::string> getHighlightVector();

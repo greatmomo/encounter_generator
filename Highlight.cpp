@@ -1,7 +1,10 @@
 #include "Highlight.h"
 
-Highlight::Highlight(Encounter enc) {
-	std::ifstream inHighlight("RegionData\\" + encounterName + "\\encounter.txt");
+Highlight::Highlight(std::string str) {
+	str[0] = tolower(str[0]);
+	//std::cout << "str = " << str << std::endl << std::endl;
+
+	std::ifstream inHighlight("RegionData\\" + str + "\\encounter.txt");
 
 	std::string readString;
 	while (std::getline(inHighlight, readString)) {

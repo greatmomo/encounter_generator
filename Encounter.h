@@ -35,6 +35,7 @@ public:
 
 	Encounter() : Encounter(Region::Random){} // If no region is specified, instantiate with random.
 	Encounter(Region);
+	~Encounter() { delete description; delete environment; delete highlight; };
 
 	Region getRegion();
 	std::string enumToText();
@@ -42,9 +43,9 @@ public:
 private:
 	Region region = Region::Random;
 
-	Description description;
-	Environment environment;
-	Highlight highlight;
+	Description *description;
+	Environment *environment;
+	Highlight *highlight;
 
 };
 

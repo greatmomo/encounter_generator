@@ -9,11 +9,5 @@ int main()
 {
     Encounter generatedEncounter = Encounter(Encounter::Region::Plains); // test with plains before implementing others
 
-
-
     system("PAUSE");
 }
-
-// Needed classes: Encounter, "Objects"
-// Lots of this file needs to be moved into Encounter class probably
-// Also move Description/Environment/Encounter stuff into their own classes that all derive from a parent Object class

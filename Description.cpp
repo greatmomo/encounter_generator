@@ -1,7 +1,11 @@
 #include "Description.h"
 
-Description::Description(Encounter enc) {
-	std::ifstream inDescription("RegionData\\" + encounterName + "\\description.txt");
+Description::Description(std::string str) {
+
+	str[0] = tolower(str[0]);
+	//std::cout << "str = " << str << std::endl << std::endl;
+
+	std::ifstream inDescription("RegionData\\" + str + "\\description.txt");
 	
 	std::string readString;
 	while (std::getline(inDescription, readString)) {

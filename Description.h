@@ -3,13 +3,10 @@
 
 #include "Object.h"
 
-class Encounter;
-
-class Description :
-    public Object
+class Description
 {
 public:
-    Description(Encounter);
+    Description(std::string);
 
     int getDescriptionVectorSize();
     std::vector<std::string> getDescriptionVector();

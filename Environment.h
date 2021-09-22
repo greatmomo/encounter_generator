@@ -3,13 +3,10 @@
 
 #include "Object.h"
 
-class Encounter;
-
-class Environment :
-    public Object
+class Environment
 {
 public:
-    Environment(Encounter);
+    Environment(std::string);
 
     int getEnvironmentVectorSize();
     std::vector<std::string> getEnvironmentVector();
