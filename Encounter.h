@@ -41,7 +41,7 @@ public:
 	std::string enumToText();
 
 	int haveXMonsters(std::string);
-	std::vector<std::string> getMonsters();
+	std::vector<std::string> getMonsters(std::string);
 
 private:
 	Region region = Region::Random;
@@ -55,6 +55,7 @@ private:
 	std::string highlightText;
 
 	std::string monsterDelimiter = "#";
+	std::vector<std::string> monstersVector;
 };
 
 #endif 

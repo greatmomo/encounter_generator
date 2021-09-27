@@ -4,7 +4,7 @@ Highlight::Highlight(std::string str) {
 	str[0] = tolower(str[0]);
 	//std::cout << "str = " << str << std::endl << std::endl;
 
-	std::ifstream inHighlight("RegionData\\" + str + "\\encounter.txt");
+	std::ifstream inHighlight("RegionData\\" + str + "\\highlight.txt");
 
 	std::string readString;
 	while (std::getline(inHighlight, readString)) {
