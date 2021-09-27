@@ -40,6 +40,9 @@ public:
 	Region getRegion();
 	std::string enumToText();
 
+	int haveXMonsters(std::string);
+	std::vector<std::string> getMonsters();
+
 private:
 	Region region = Region::Random;
 
@@ -47,6 +50,11 @@ private:
 	Environment *environment;
 	Highlight *highlight;
 
+	std::string descriptionText;
+	std::string environmentText;
+	std::string highlightText;
+
+	std::string monsterDelimiter = "#";
 };
 
 #endif 
