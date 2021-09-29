@@ -17,6 +17,7 @@ Encounter::Encounter(Region r) {
 	descriptionText = description->getDescriptionVector()[rand() % description->getDescriptionVectorSize()];
 	environmentText = environment->getEnvironmentVector()[rand() % environment->getEnvironmentVectorSize()];
 	highlightText = highlight->getHighlightVector()[rand() % highlight->getHighlightVectorSize()];
+	//highlightText = highlight->getHighlightVector()[5]; //Test with monsters
 
 	// print random member of each vector
 	if (description->getDescriptionVectorSize() > 0)
@@ -26,9 +27,9 @@ Encounter::Encounter(Region r) {
 	if (highlight->getHighlightVectorSize() > 0)
 		std::cout << highlightText << std::endl << std::endl;
 
-	std::cout << "This encounter has " << haveXMonsters(highlightText)/2 << " monster types.\n\n";
+	std::cout << "This encounter has " << haveXMonsters(highlightText) << " monster types.\n\n";
 	
-	if (haveXMonsters(highlightText) > 2) {
+	if (haveXMonsters(highlightText) >= 1) {
 		monstersVector = getMonsters(highlightText);
 		for (int i = 0; i < monstersVector.size(); i++) {
 			std::cout << monstersVector[i] << "\n";
@@ -105,7 +106,7 @@ int Encounter::haveXMonsters(std::string line) {
 		}
 	}
 	if (count > 1 && count % 2 == 0) {
-		return count;
+		return count / 2;
 	}
 	else {
 		return 0;
@@ -115,19 +116,22 @@ int Encounter::haveXMonsters(std::string line) {
 std::vector<std::string> Encounter::getMonsters(std::string line) {
 	size_t startPos = 0, endPos = 0;
 	std::vector<std::string> monstersVector;
+
 	while (!line.empty()) {
 		startPos = line.find(monsterDelimiter);
-		endPos = startPos + line.substr(startPos + 1, line.length()).find(monsterDelimiter);
+		endPos = startPos + line.substr(startPos + 1, line.length()).find(monsterDelimiter) - startPos;
 
-		monstersVector.push_back(line.substr(startPos + 1, endPos - 1));
+		if (endPos >= line.length())
+			break;
+		monstersVector.push_back(line.substr(startPos + 1, endPos));
 		//std::cout << int(pos) << std::endl;
+
 		if (endPos < line.length()) {
-			line = line.substr(endPos + 1, line.length());
+			line = line.substr(startPos + endPos + 2);
 		}
 		else {
 			line = "";
 		}
-		std::cout << "\nline = " << line << std::endl;
 	}
 
 	return monstersVector;
