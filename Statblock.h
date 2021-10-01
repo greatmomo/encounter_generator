@@ -1,12 +1,9 @@
 #pragma once
 
-#include <iostream>
+#include "Object.h"
 
 class Statblock
 {
-public:
-	Statblock(std::string);
-
 private:
 	std::string name;
 	std::string type;
@@ -27,5 +24,15 @@ private:
 	std::string abilities;
 	std::string actions;
 	std::string legendaryActions; // posibly empty
+
+	std::vector<std::string> statblockVector;
+	int iter;
+
+	std::vector<std::string> abilityVector;
+	std::vector<std::string> actionVector;
+	std::vector<std::string> legendaryActionVector;
+
+public:
+	Statblock(std::string);
 };
 

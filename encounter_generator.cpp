@@ -3,9 +3,13 @@
 
 #include "Encounter.h"
 
+#include "Statblock.h"
+
 int main()
 {
     Encounter generatedEncounter = Encounter(Encounter::Region::Plains); // test with plains before implementing others
+
+    Statblock wolfStats = Statblock("Wolf");
 }
 
 // find out how to make windows (I have a bookmark)
