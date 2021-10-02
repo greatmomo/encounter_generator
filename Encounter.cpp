@@ -35,6 +35,8 @@ Encounter::Encounter(Region r) {
 			std::cout << monstersVector[i] << "\n";
 		}
 	}
+
+	std::cout << std::endl;
 }
 
 Encounter::Region Encounter::getRegion() {

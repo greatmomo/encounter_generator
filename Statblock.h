@@ -16,11 +16,13 @@ private:
 	std::string intelligence;
 	std::string wisdom;
 	std::string charisma;
+	// Saving Throws optional
 	std::string skills;
 	std::string conditionImmunity; // posibly empty
 	std::string senses;
 	std::string languages; // posibly empty
 	std::string cr;
+	// Proficiency Bonus optional
 	std::string abilities;
 	std::string actions;
 	std::string legendaryActions; // posibly empty
@@ -34,5 +36,6 @@ private:
 
 public:
 	Statblock(std::string);
+	void Print();
 };
 

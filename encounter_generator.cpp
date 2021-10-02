@@ -9,7 +9,12 @@ int main()
 {
     Encounter generatedEncounter = Encounter(Encounter::Region::Plains); // test with plains before implementing others
 
+    for (int i = 0; i < generatedEncounter.haveXMonsters(); i++) {
+
+    }
+
     Statblock wolfStats = Statblock("Wolf");
+    wolfStats.Print();
 }
 
 // find out how to make windows (I have a bookmark)

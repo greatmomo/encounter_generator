@@ -60,7 +60,12 @@ Statblock::Statblock(std::string fileName) {
 	iter++;
 
 	//std::cout << statblockVector[iter] << std::endl;
-	skills = statblockVector[iter];
+	if (statblockVector[iter] != "#") { // possibly empty
+		skills = statblockVector[iter];
+	}
+	else {
+		skills = "";
+	}
 	iter++;
 
 	//std::cout << statblockVector[iter] << std::endl;
@@ -126,6 +131,59 @@ Statblock::Statblock(std::string fileName) {
 		while (statblockVector[iter] != "endfile") {
 			legendaryActionVector.push_back(statblockVector[iter]);
 			iter++;
+		}
+	}
+}
+
+void Statblock::Print() {
+	std::cout << name << std::endl;
+
+	std::cout << type << std::endl;
+
+	std::cout << "Armor Class " << ac << std::endl;
+
+	std::cout << "Hit Points " << hp << std::endl;
+
+	std::cout << "Speed " << speed << std::endl;
+
+	std::cout << "----------------------------------------\n";
+
+	std::cout << "  STR       DEX       CON       INT       WIS       CHA\n";
+	std::cout << strength << "   " << dexterity << "   " << constitution << "   " << intelligence << "   " << wisdom << "   " << charisma << std::endl;
+
+	std::cout << "----------------------------------------\n";
+
+	// std::cout << "Speed " << saving << std::endl; // need saving throws too
+
+	std::cout << "Skills " << skills << std::endl;
+
+	if (conditionImmunity != "")
+		std::cout << "Immunities " << conditionImmunity << std::endl;
+
+	std::cout << "Senses " << senses << std::endl;
+
+	if (languages != "")
+		std::cout << "Languages " << languages << std::endl;
+
+	std::cout << "Challenge " << cr << std::endl; // this line is missing proficiency bonus
+
+	std::cout << "----------------------------------------\n";
+
+	for (auto element : abilityVector) {
+		std::cout << element << std::endl;
+	}
+
+	std::cout << "Actions\n";
+	std::cout << "----------------------------------------\n";
+	for (auto element : actionVector) {
+		std::cout << element << std::endl;
+	}
+
+	if (legendaryActionVector.size() != 0) {
+		std::cout << "Legendary Actions\n";
+		std::cout << "----------------------------------------\n";
+		for (auto element : legendaryActionVector) {
+			std::cout << element << std::endl;
 		}
 	}
 }
