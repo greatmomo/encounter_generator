@@ -16,16 +16,16 @@ private:
 	std::string intelligence;
 	std::string wisdom;
 	std::string charisma;
-	// Saving Throws optional
+	std::string savingThrows; // possibly empty
 	std::string skills;
-	std::string conditionImmunity; // posibly empty
+	std::string conditionImmunity; // possibly empty
 	std::string senses;
-	std::string languages; // posibly empty
+	std::string languages; // possibly empty
 	std::string cr;
-	// Proficiency Bonus optional
+	std::string proficiencyBonus; // possibly empty
 	std::string abilities;
 	std::string actions;
-	std::string legendaryActions; // posibly empty
+	std::string legendaryActions; // possibly empty
 
 	std::vector<std::string> statblockVector;
 	int iter;

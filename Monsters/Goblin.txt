@@ -1,0 +1,25 @@
+Goblin
+Small humanoid (goblinoid), neutral evil
+15 (Leather Armor, Shield)
+7 (2d6)
+30 ft.
+ 8 (-1)
+14 (+2)
+10 (+0)
+10 (+0)
+ 8 (-1)
+ 8 (-1)
+#
+Stealth +6
+#
+Darkvision 60 Ft., passive Perception 9
+Common, Goblin
+1/4 (50 XP)
+#
+Abilities
+#Nimble Escape.# The goblin can take the Disengage or Hide action as a bonus action on each of its turns.
+Actions
+#Scimitar.# Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: (1d6 + 2) slashing damage.
+#Shortbow.# Ranged Weapon Attack: +4 to hit, reach 80/320 ft., one target. Hit: (1d6 + 2) piercing damage.
+Legendary Actions
+endfile

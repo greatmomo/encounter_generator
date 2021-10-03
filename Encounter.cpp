@@ -26,15 +26,15 @@ Encounter::Encounter(Region r) {
 		std::cout << environmentText << " ";
 	if (highlight->getHighlightVectorSize() > 0)
 		std::cout << highlightText << std::endl << std::endl;
-
-	std::cout << "This encounter has " << haveXMonsters(highlightText) << " monster types.\n\n";
 	
-	if (haveXMonsters(highlightText) >= 1) {
-		monstersVector = getMonsters(highlightText);
-		for (int i = 0; i < monstersVector.size(); i++) {
-			std::cout << monstersVector[i] << "\n";
-		}
-	}
+	//std::cout << "This encounter has " << haveXMonsters(highlightText) << " monster types.\n\n";
+	
+	//if (haveXMonsters(highlightText) >= 1) {
+	//	monstersVector = getMonsters(highlightText);
+	//	for (int i = 0; i < monstersVector.size(); i++) {
+	//		std::cout << monstersVector[i] << "\n";
+	//	}
+	//}
 
 	std::cout << std::endl;
 }
@@ -137,4 +137,16 @@ std::vector<std::string> Encounter::getMonsters(std::string line) {
 	}
 
 	return monstersVector;
+}
+
+std::string Encounter::getDescription() {
+	return descriptionText;
+}
+
+std::string Encounter::getEnvironment() {
+	return environmentText;
+}
+
+std::string Encounter::getHighlight() {
+	return highlightText;
 }

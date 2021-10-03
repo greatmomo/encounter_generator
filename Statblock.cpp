@@ -59,6 +59,14 @@ Statblock::Statblock(std::string fileName) {
 	charisma = statblockVector[iter];
 	iter++;
 
+	if (statblockVector[iter] != "#") { // possibly empty
+		savingThrows = statblockVector[iter];
+	}
+	else {
+		savingThrows = "";
+	}
+	iter++;
+
 	//std::cout << statblockVector[iter] << std::endl;
 	if (statblockVector[iter] != "#") { // possibly empty
 		skills = statblockVector[iter];
@@ -78,7 +86,12 @@ Statblock::Statblock(std::string fileName) {
 	iter++;
 	
 	//std::cout << statblockVector[iter] << std::endl;
-	senses = statblockVector[iter];
+	if (statblockVector[iter] != "#") { // possibly empty
+		senses = statblockVector[iter];
+	}
+	else {
+		senses = "";
+	}
 	iter++;
 
 	//std::cout << statblockVector[iter] << std::endl;
@@ -92,6 +105,14 @@ Statblock::Statblock(std::string fileName) {
 
 	//std::cout << statblockVector[iter] << std::endl;
 	cr = statblockVector[iter];
+	iter++;
+
+	if (statblockVector[iter] != "#") { // possibly empty
+		proficiencyBonus = statblockVector[iter];
+	}
+	else {
+		proficiencyBonus = "";
+	}
 	iter++;
 
 	//std::cout << statblockVector[iter] << std::endl;
@@ -155,17 +176,25 @@ void Statblock::Print() {
 
 	// std::cout << "Speed " << saving << std::endl; // need saving throws too
 
-	std::cout << "Skills " << skills << std::endl;
+	if (savingThrows != "")
+		std::cout << "Saving Throws " << savingThrows << std::endl;
+
+	if (skills != "")
+		std::cout << "Skills " << skills << std::endl;
 
 	if (conditionImmunity != "")
 		std::cout << "Immunities " << conditionImmunity << std::endl;
 
-	std::cout << "Senses " << senses << std::endl;
+	if (senses != "")
+		std::cout << "Senses " << senses << std::endl;
 
 	if (languages != "")
 		std::cout << "Languages " << languages << std::endl;
 
-	std::cout << "Challenge " << cr << std::endl; // this line is missing proficiency bonus
+	std::cout << "Challenge " << cr; // this line is missing proficiency bonus
+
+	if (proficiencyBonus != "")
+		std::cout << "     Proficiency Bonus " << proficiencyBonus << std::endl;
 
 	std::cout << "----------------------------------------\n";
 
@@ -186,4 +215,6 @@ void Statblock::Print() {
 			std::cout << element << std::endl;
 		}
 	}
+
+	std::cout << std::endl << std::endl;
 }

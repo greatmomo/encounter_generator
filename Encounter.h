@@ -43,6 +43,10 @@ public:
 	int haveXMonsters(std::string);
 	std::vector<std::string> getMonsters(std::string);
 
+	std::string getDescription();
+	std::string getEnvironment();
+	std::string getHighlight();
+
 private:
 	Region region = Region::Random;
 
