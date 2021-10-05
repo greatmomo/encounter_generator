@@ -9,21 +9,20 @@ int main()
 {
     Encounter generatedEncounter = Encounter(Encounter::Region::Plains); // test with plains before implementing others
 
-    /*std::vector<std::string> monstersVector = generatedEncounter.getMonsters(generatedEncounter.getHighlight());
-    for (int i = 0; i < monstersVector.size(); i++) {
-        Statblock forPrint = Statblock(monstersVector[i]);
-        forPrint.Print();
-    }*/
-
     AvailableStatblocks aS("\Monsters");
     std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
 
     for (auto entry : availableStatblocks) {
-        std::cout << entry << std::endl;
+        size_t pos = generatedEncounter.getHighlight().find(entry);
+
+        if (pos != std::string::npos) {
+            Statblock forPrint = Statblock(entry);
+            forPrint.Print();
+        }
     }
 }
 
-// Use that scan information to search the highlight string for any available statblocks, and instead remove the '#' delimiters
+// change monster names in text to gold (some starter code in Encounter.cpp)
 // 
 // find out how to make windows (I have a bookmark)
 // add traps?

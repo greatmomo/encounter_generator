@@ -157,7 +157,11 @@ Statblock::Statblock(std::string fileName) {
 }
 
 void Statblock::Print() {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	SetConsoleTextAttribute(hConsole, 6);
 	std::cout << name << std::endl;
+	SetConsoleTextAttribute(hConsole, 7);
 
 	std::cout << type << std::endl;
 

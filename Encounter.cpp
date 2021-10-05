@@ -26,15 +26,29 @@ Encounter::Encounter(Region r) {
 		std::cout << environmentText << " ";
 	if (highlight->getHighlightVectorSize() > 0)
 		std::cout << highlightText << std::endl << std::endl;
-	
-	//std::cout << "This encounter has " << haveXMonsters(highlightText) << " monster types.\n\n";
-	
-	//if (haveXMonsters(highlightText) >= 1) {
-	//	monstersVector = getMonsters(highlightText);
-	//	for (int i = 0; i < monstersVector.size(); i++) {
-	//		std::cout << monstersVector[i] << "\n";
-	//	}
-	//}
+
+	// Need (2 x haveXmonsters) + 1 substrings for coloration?
+
+	/*AvailableStatblocks aS("\Monsters");
+	std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
+
+	for (auto entry : availableStatblocks) {
+		size_t pos = generatedEncounter.getHighlight().find(entry);
+
+		if (pos != std::string::npos) {
+			Statblock forPrint = Statblock(entry);
+			forPrint.Print();
+		}
+	}*/
+
+	//// example of how to set text of monster name to gold
+	//HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	//SetConsoleTextAttribute(hConsole, 7);
+	//std::cout << "The angry ";
+	//SetConsoleTextAttribute(hConsole, 6);
+	//std::cout << "Hobgoblin ";
+	//SetConsoleTextAttribute(hConsole, 7);
+	//std::cout << "brandishes his spear and approaches.\n";
 
 	std::cout << std::endl;
 }
