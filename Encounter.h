@@ -47,6 +47,8 @@ public:
 	std::string getEnvironment();
 	std::string getHighlight();
 
+	std::vector<std::string> highlightSubstrings(std::string);
+
 private:
 	Region region = Region::Random;
 

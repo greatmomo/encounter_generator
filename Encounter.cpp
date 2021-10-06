@@ -1,5 +1,7 @@
 #include "Encounter.h"
 
+#include <algorithm>
+
 Encounter::Encounter(Region r) {
 	srand(int(time(NULL)));
 	region = r;
@@ -27,7 +29,11 @@ Encounter::Encounter(Region r) {
 	if (highlight->getHighlightVectorSize() > 0)
 		std::cout << highlightText << std::endl << std::endl;
 
-	// Need (2 x haveXmonsters) + 1 substrings for coloration?
+	std::vector<std::string> resultVector = highlightSubstrings(highlightText);
+
+	for (auto entry : resultVector) {
+		std::cout << "Part = " << entry << std::endl;
+	}
 
 	/*AvailableStatblocks aS("\Monsters");
 	std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
@@ -163,4 +169,56 @@ std::string Encounter::getEnvironment() {
 
 std::string Encounter::getHighlight() {
 	return highlightText;
+}
+
+std::vector<std::string> Encounter::highlightSubstrings(std::string str) {
+	int pos;
+	std::vector<std::string> result;
+
+	std::vector<std::vector<int>> posLengthVector;
+
+	for (auto entry : monstersVector) {
+		pos = str.find(entry);
+		if (pos != std::string::npos) {
+			posLengthVector.push_back(std::vector<int>{ pos, (int)entry.length() });
+		}
+	}
+
+	std::cout << "Pre sort\n";
+
+	for (auto i : posLengthVector) {
+		for (auto entry : i) {
+			std::cout << i[entry] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	sort(posLengthVector.begin(), posLengthVector.end());
+
+	std::cout << "Post sort\n";
+
+	for (auto i : posLengthVector) {
+		for (auto entry : i) {
+			std::cout << i[entry] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	// only sorts by first vector element, so it should work for my use case!
+	// create vector of vectors {pos, length}
+	// sort positions in ascending order
+	// make substrings in order and feed into a vector
+	// int prev = 0, then save as we go
+
+	return result;
+	
+	// Need (2 x haveXmonsters) + 1 substrings for coloration?
+	// if we have 1 monster
+	//		find monster name
+	//		make a substring from start to pos
+	//		make a substring from pos to pos + length
+	//		make a substring from pos + length to end
+	// but what about for multiple monsters?
+	// we need to determine which comes first to slice properly
+	// or we just call a function that does the above recursively on the start and end slices
 }
