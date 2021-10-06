@@ -11,6 +11,7 @@
 #include "Description.h"
 #include "Environment.h"
 #include "Highlight.h"
+#include "AvailableStatblocks.h"
 
 class Encounter
 {
@@ -41,7 +42,6 @@ public:
 	std::string enumToText();
 
 	int haveXMonsters(std::string);
-	std::vector<std::string> getMonsters(std::string);
 
 	std::string getDescription();
 	std::string getEnvironment();
@@ -61,7 +61,6 @@ private:
 	std::string highlightText;
 
 	std::string monsterDelimiter = "#";
-	std::vector<std::string> monstersVector;
 };
 
 #endif 

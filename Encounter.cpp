@@ -135,30 +135,6 @@ int Encounter::haveXMonsters(std::string line) {
 	}
 }
 
-std::vector<std::string> Encounter::getMonsters(std::string line) {
-	size_t startPos = 0, endPos = 0;
-	std::vector<std::string> monstersVector;
-
-	while (!line.empty()) {
-		startPos = line.find(monsterDelimiter);
-		endPos = startPos + line.substr(startPos + 1, line.length()).find(monsterDelimiter) - startPos;
-
-		if (endPos >= line.length())
-			break;
-		monstersVector.push_back(line.substr(startPos + 1, endPos));
-		//std::cout << int(pos) << std::endl;
-
-		if (endPos < line.length()) {
-			line = line.substr(startPos + endPos + 2);
-		}
-		else {
-			line = "";
-		}
-	}
-
-	return monstersVector;
-}
-
 std::string Encounter::getDescription() {
 	return descriptionText;
 }
@@ -177,48 +153,28 @@ std::vector<std::string> Encounter::highlightSubstrings(std::string str) {
 
 	std::vector<std::vector<int>> posLengthVector;
 
-	for (auto entry : monstersVector) {
+	AvailableStatblocks aS("\Monsters");
+	std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
+
+	for (auto entry : availableStatblocks) {
 		pos = str.find(entry);
 		if (pos != std::string::npos) {
 			posLengthVector.push_back(std::vector<int>{ pos, (int)entry.length() });
 		}
 	}
 
-	std::cout << "Pre sort\n";
-
-	for (auto i : posLengthVector) {
-		for (auto entry : i) {
-			std::cout << i[entry] << " ";
-		}
-		std::cout << std::endl;
-	}
-
+	// put in position order for substringing
 	sort(posLengthVector.begin(), posLengthVector.end());
 
-	std::cout << "Post sort\n";
-
 	for (auto i : posLengthVector) {
-		for (auto entry : i) {
-			std::cout << i[entry] << " ";
-		}
+		std::cout << i[0] << " " << i[1];
 		std::cout << std::endl;
 	}
 
-	// only sorts by first vector element, so it should work for my use case!
-	// create vector of vectors {pos, length}
-	// sort positions in ascending order
 	// make substrings in order and feed into a vector
 	// int prev = 0, then save as we go
+	//
+	// Gnoll and Gnoll Pack Lord cause an issue
 
 	return result;
-	
-	// Need (2 x haveXmonsters) + 1 substrings for coloration?
-	// if we have 1 monster
-	//		find monster name
-	//		make a substring from start to pos
-	//		make a substring from pos to pos + length
-	//		make a substring from pos + length to end
-	// but what about for multiple monsters?
-	// we need to determine which comes first to slice properly
-	// or we just call a function that does the above recursively on the start and end slices
 }
