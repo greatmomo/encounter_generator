@@ -35,6 +35,8 @@ Encounter::Encounter(Region r) {
 		std::cout << "Part = " << entry << std::endl;
 	}
 
+	// Gnoll and Gnoll Pack Lord are still causing issues, otherwise the resultVector looks good
+
 	/*AvailableStatblocks aS("\Monsters");
 	std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
 
@@ -163,18 +165,24 @@ std::vector<std::string> Encounter::highlightSubstrings(std::string str) {
 		}
 	}
 
+	if (posLengthVector.size() == 0)
+		return result;
 	// put in position order for substringing
 	sort(posLengthVector.begin(), posLengthVector.end());
 
-	for (auto i : posLengthVector) {
-		std::cout << i[0] << " " << i[1];
-		std::cout << std::endl;
-	}
+	result.push_back(str.substr(0, posLengthVector[0][0]));
+	pos = posLengthVector[0][1];
 
-	// make substrings in order and feed into a vector
-	// int prev = 0, then save as we go
-	//
-	// Gnoll and Gnoll Pack Lord cause an issue
+	for (size_t i = 0; i < posLengthVector.size(); i++) {
+		result.push_back(str.substr(posLengthVector[i][0], posLengthVector[i][1]));
+
+		if (i == posLengthVector.size() - 1) {
+			result.push_back(str.substr(posLengthVector[i][0] + posLengthVector[i][1]));
+		}
+		else {
+			result.push_back(str.substr(posLengthVector[i][0] + posLengthVector[i][1], posLengthVector[i + 1][0] - (posLengthVector[i][0] + posLengthVector[i][1])));
+		}
+	}
 
 	return result;
 }
