@@ -26,37 +26,27 @@ Encounter::Encounter(Region r) {
 		std::cout << descriptionText << " ";
 	if (environment->getEnvironmentVectorSize() > 0)
 		std::cout << environmentText << " ";
-	if (highlight->getHighlightVectorSize() > 0)
-		std::cout << highlightText << std::endl << std::endl;
+	if (highlight->getHighlightVectorSize() > 0) {
+		std::vector<std::string> resultVector = highlightSubstrings(highlightText);
 
-	std::vector<std::string> resultVector = highlightSubstrings(highlightText);
-
-	for (auto entry : resultVector) {
-		std::cout << "Part = " << entry << std::endl;
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		bool golden = false;
+		for (auto entry : resultVector) {
+			if (golden) {
+				SetConsoleTextAttribute(hConsole, 6);
+				std::cout << entry;
+				golden = false;
+			}
+			else {
+				SetConsoleTextAttribute(hConsole, 7);
+				std::cout << entry;
+				golden = true;
+			}
+		}
+		std::cout << std::endl << std::endl;
 	}
 
 	// Gnoll and Gnoll Pack Lord are still causing issues, otherwise the resultVector looks good
-
-	/*AvailableStatblocks aS("\Monsters");
-	std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();
-
-	for (auto entry : availableStatblocks) {
-		size_t pos = generatedEncounter.getHighlight().find(entry);
-
-		if (pos != std::string::npos) {
-			Statblock forPrint = Statblock(entry);
-			forPrint.Print();
-		}
-	}*/
-
-	//// example of how to set text of monster name to gold
-	//HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	//SetConsoleTextAttribute(hConsole, 7);
-	//std::cout << "The angry ";
-	//SetConsoleTextAttribute(hConsole, 6);
-	//std::cout << "Hobgoblin ";
-	//SetConsoleTextAttribute(hConsole, 7);
-	//std::cout << "brandishes his spear and approaches.\n";
 
 	std::cout << std::endl;
 }
