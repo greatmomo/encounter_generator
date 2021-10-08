@@ -47,6 +47,7 @@ Encounter::Encounter(Region r) {
 	}
 
 	// TODO: Gnoll and Gnoll Pack Lord are still causing issues, otherwise the resultVector looks good
+	// Can we maybe check if multiple entries get the same position and use the longer result?
 
 	std::cout << std::endl;
 }
@@ -155,8 +156,10 @@ std::vector<std::string> Encounter::highlightSubstrings(std::string str) {
 		}
 	}
 
-	if (posLengthVector.size() == 0)
+	if (posLengthVector.size() == 0) {
+		result.push_back(str);
 		return result;
+	}
 	// put in position order for substringing
 	sort(posLengthVector.begin(), posLengthVector.end());
 
