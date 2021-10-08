@@ -46,7 +46,7 @@ Encounter::Encounter(Region r) {
 		std::cout << std::endl << std::endl;
 	}
 
-	// Gnoll and Gnoll Pack Lord are still causing issues, otherwise the resultVector looks good
+	// TODO: Gnoll and Gnoll Pack Lord are still causing issues, otherwise the resultVector looks good
 
 	std::cout << std::endl;
 }

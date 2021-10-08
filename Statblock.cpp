@@ -202,6 +202,8 @@ void Statblock::Print() {
 
 	std::cout << "----------------------------------------\n";
 
+	// TODO: Make ability, action, and legendary action names another color, and remove delimiters (only use the '.')
+
 	for (auto element : abilityVector) {
 		std::cout << element << std::endl;
 	}
