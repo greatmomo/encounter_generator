@@ -22,8 +22,6 @@ int main()
     }
 }
 
-// change monster names in text to gold (some starter code in Encounter.cpp)
-// 
 // find out how to make windows (I have a bookmark)
 // add traps?
 // add obstacles or other things with DCs?
