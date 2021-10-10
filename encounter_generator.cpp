@@ -25,6 +25,5 @@ int main()
 // find out how to make windows (I have a bookmark)
 // add traps?
 // add obstacles or other things with DCs?
-// figure out how to make monster/trap names bold
 // 
 // allow input of custom entries that are then saved to the proper files?
