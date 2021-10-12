@@ -1,0 +1,24 @@
+Giant Crab
+Medium beast, unaligned
+15 (Natural Armor)
+13 (3d8)
+30 ft., swim 30 ft.
+13 (+1)
+15 (+2)
+11 (+0)
+ 1 (-5)
+ 9 (-1)
+ 3 (-4)
+#
+Stealth +4
+#
+Blindsight 30 Ft., passive Perception 9
+#
+1/8 (25 XP)
+#
+Abilities
+#Amphibious.# The crab can breathe air and water.
+Actions
+#Claw.# Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage. The target is grappled (escape dc 11) The crab has two claws, each of which can grapple only one target
+Legendary Actions
+endfile
