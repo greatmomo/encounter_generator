@@ -19,10 +19,10 @@ int main()
             Statblock forPrint = Statblock(entry);
             forPrint.Print();
         }
-    }
+    }    
 }
 
-// find out how to make windows (I have a bookmark)
+// find out how to make windows (I have a bookmark) - it's impossible
 // add traps?
 // add obstacles or other things with DCs?
 // 
