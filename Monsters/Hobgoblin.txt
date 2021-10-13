@@ -12,6 +12,8 @@ Medium humanoid (goblinoid), lawful evil
 #
 #
 #
+#
+#
 Darkvision 60 Ft., passive Perception 10
 Common, Goblin
 1/2 (100 XP)

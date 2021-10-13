@@ -18,6 +18,8 @@ private:
 	std::string charisma;
 	std::string savingThrows; // possibly empty
 	std::string skills;
+	std::string damageResistances; // possibly empty
+	std::string damageImmunity; // possibly empty
 	std::string conditionImmunity; // possibly empty
 	std::string senses;
 	std::string languages; // possibly empty

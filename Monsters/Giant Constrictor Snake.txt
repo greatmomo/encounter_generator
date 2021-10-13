@@ -12,6 +12,8 @@ Huge beast, unaligned
 #
 Perception +2
 #
+#
+#
 Blindsight 10 Ft., passive Perception 12
 #
 2 (450 XP)

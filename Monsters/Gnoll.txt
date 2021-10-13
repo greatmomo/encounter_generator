@@ -12,6 +12,8 @@ Medium humanoid (gnoll), chaotic evil
 #
 #
 #
+#
+#
 Darkvision 60 ft., Passive Perception 10
 Gnoll
 1/2 (100 XP)

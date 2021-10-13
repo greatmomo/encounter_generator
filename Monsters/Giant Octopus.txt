@@ -12,6 +12,8 @@ Large beast, unaligned
 #
 Perception +4, Stealth +5
 #
+#
+#
 Darkvision 60 Ft., passive Perception 14
 #
 1 (200 XP)

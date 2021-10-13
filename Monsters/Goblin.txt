@@ -12,6 +12,8 @@ Small humanoid (goblinoid), neutral evil
 #
 Stealth +6
 #
+#
+#
 Darkvision 60 Ft., passive Perception 9
 Common, Goblin
 1/4 (50 XP)

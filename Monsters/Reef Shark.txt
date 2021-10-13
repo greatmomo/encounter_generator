@@ -12,6 +12,8 @@ Swim 40 ft.
 #
 Perception +2
 #
+#
+#
 Blindsight 30 Ft., passive Perception 12
 #
 1/2 (100 XP)

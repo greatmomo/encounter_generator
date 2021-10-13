@@ -12,6 +12,8 @@ Medium beast, unaligned
 #
 Stealth +4
 #
+#
+#
 Blindsight 30 Ft., passive Perception 9
 #
 1/8 (25 XP)

@@ -78,6 +78,24 @@ Statblock::Statblock(std::string fileName) {
 
 	//std::cout << statblockVector[iter] << std::endl;
 	if (statblockVector[iter] != "#") { // possibly empty
+		damageResistances = statblockVector[iter];
+	}
+	else {
+		damageResistances = "";
+	}
+	iter++;
+
+	//std::cout << statblockVector[iter] << std::endl;
+	if (statblockVector[iter] != "#") { // possibly empty
+		damageImmunity = statblockVector[iter];
+	}
+	else {
+		damageImmunity = "";
+	}
+	iter++;
+
+	//std::cout << statblockVector[iter] << std::endl;
+	if (statblockVector[iter] != "#") { // possibly empty
 		conditionImmunity = statblockVector[iter];
 	}
 	else {
@@ -186,8 +204,14 @@ void Statblock::Print() {
 	if (skills != "")
 		std::cout << "Skills " << skills << std::endl;
 
+	if (damageResistances != "")
+		std::cout << "Damage Resistances " << damageResistances << std::endl;
+
+	if (damageImmunity != "")
+		std::cout << "Damage Immunities " << damageImmunity << std::endl;
+
 	if (conditionImmunity != "")
-		std::cout << "Immunities " << conditionImmunity << std::endl;
+		std::cout << "Condition Immunities " << conditionImmunity << std::endl;
 
 	if (senses != "")
 		std::cout << "Senses " << senses << std::endl;
@@ -208,15 +232,15 @@ void Statblock::Print() {
 		std::cout << element << std::endl;
 	}
 
-	std::cout << "Actions\n";
 	std::cout << "----------------------------------------\n";
+	std::cout << "Actions\n";
 	for (auto element : actionVector) {
 		std::cout << element << std::endl;
 	}
 
 	if (legendaryActionVector.size() != 0) {
-		std::cout << "Legendary Actions\n";
 		std::cout << "----------------------------------------\n";
+		std::cout << "Legendary Actions\n";
 		for (auto element : legendaryActionVector) {
 			std::cout << element << std::endl;
 		}

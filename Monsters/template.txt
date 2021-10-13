@@ -11,6 +11,8 @@
 #charisma
 #savingThrows
 #skills
+#damageResistances
+#damageImmunities
 #conditionImmunities
 #senses
 #languages
