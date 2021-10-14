@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AvailableDirectories.cpp" />
     <ClCompile Include="AvailableStatblocks.cpp" />
     <ClCompile Include="Description.cpp" />
     <ClCompile Include="Encounter.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Statblock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AvailableDirectories.h" />
     <ClInclude Include="AvailableStatblocks.h" />
     <ClInclude Include="Description.h" />
     <ClInclude Include="Encounter.h" />

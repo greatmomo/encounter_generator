@@ -36,6 +36,9 @@
     <ClCompile Include="AvailableStatblocks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AvailableDirectories.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encounter.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AvailableStatblocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvailableDirectories.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
