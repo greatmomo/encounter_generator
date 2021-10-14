@@ -22,8 +22,13 @@ int main()
     }    
 }
 
-// find out how to make windows (I have a bookmark) - it's impossible
+// Generate Region list from existing folders
+// Make Region for generation selectable via text entry
+// 
+// find out how to make windows (I have a bookmark) - it's impossible for some reason
 // add traps?
 // add obstacles or other things with DCs?
 // 
 // allow input of custom entries that are then saved to the proper files?
+//
+// Search TODO
