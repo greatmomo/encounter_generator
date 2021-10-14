@@ -23,12 +23,9 @@ public:
 		Mountains,
 		Marsh,
 		Desert,
-		Underground,
 		Aquatic,
 		Underdark,
 		Abyss,
-		Nine_Hells,
-		Gehenna,
 		Town,
 		Dungeon,
 		Random

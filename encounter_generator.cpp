@@ -4,6 +4,7 @@
 #include "Encounter.h"
 #include "Statblock.h"
 #include "AvailableStatblocks.h"
+#include "AvailableDirectories.h"
 
 int main()
 {
@@ -22,7 +23,12 @@ int main()
     }    
 }
 
-// Generate Region list from existing folders
+// Generate Region list from existing folders (Use AvailableDirectories.h)
+//      Scan Directories and create vector
+//      Print Vector and prompt input
+//      Check input against vector
+//          If valid, continue and generate Encounter
+//          Else, repeat loop
 // Make Region for generation selectable via text entry
 // 
 // find out how to make windows (I have a bookmark) - it's impossible for some reason
