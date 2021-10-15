@@ -2,19 +2,21 @@
 
 #include <algorithm>
 
-Encounter::Encounter(Region r) {
+Encounter::Encounter(std::vector<std::string> availableDirectories) {
 	srand(int(time(NULL)));
-	region = r;
-	while (region == Region::Random) { // Random is not allowed, reroll
-		region = Region(rand() % static_cast<int>(Region::Random));
+	while (region == "Random") { // Random is not allowed, reroll
+		// region = Region(rand() % static_cast<int>(Region::Random));
+
+		// implement selection here
+		region = "Plains";
 	}
 
 	// instantiate other classes
-	description = new Description(this->enumToText());
-	environment = new Environment(this->enumToText());
-	highlight = new Highlight(this->enumToText());
+	description = new Description(region);
+	environment = new Environment(region);
+	highlight = new Highlight(region);
 
-	std::cout << "Generated \"" << this->enumToText() << "\" Biome:\n\n";
+	std::cout << "Generated \"" << region << "\" Biome:\n\n";
 
 	descriptionText = description->getDescriptionVector()[rand() % description->getDescriptionVectorSize()];
 	environmentText = environment->getEnvironmentVector()[rand() % environment->getEnvironmentVectorSize()];
@@ -52,58 +54,8 @@ Encounter::Encounter(Region r) {
 	std::cout << std::endl;
 }
 
-Encounter::Region Encounter::getRegion() {
+std::string Encounter::getRegion() {
 	return region;
-}
-
-std::string Encounter::enumToText() {
-	switch (region) {
-	case Region::Plains:
-		return "Plains";
-		break;
-	case Region::Forest:
-		return "Forest";
-		break;
-	case Region::Hills:
-		return "Hills";
-		break;
-	case Region::Mountains:
-		return "Mountains";
-		break;
-	case Region::Marsh:
-		return "Marsh";
-		break;
-	case Region::Desert:
-		return "Desert";
-		break;
-	case Region::Underground:
-		return "Underground";
-		break;
-	case Region::Aquatic:
-		return "Aquatic";
-		break;
-	case Region::Underdark:
-		return "Underdark";
-		break;
-	case Region::Abyss:
-		return "Abyss";
-		break;
-	case Region::Nine_Hells:
-		return "Nine Hells";
-		break;
-	case Region::Gehenna:
-		return "Gehenna";
-		break;
-	case Region::Town:
-		return "Town";
-		break;
-	case Region::Dungeon:
-		return "Dungeons";
-		break;
-	default:
-		return "Invalid";
-		break;
-	}
 }
 
 int Encounter::haveXMonsters(std::string line) {

@@ -8,7 +8,10 @@
 
 int main()
 {
-    Encounter generatedEncounter = Encounter(Encounter::Region::Plains); // test with plains before implementing others
+    AvailableDirectories aD("\RegionData");
+    std::vector<std::string> availableRegions = aD.GetAvailableDirectories();
+
+    Encounter generatedEncounter = Encounter(availableRegions); // test with plains before implementing others
 
     AvailableStatblocks aS("\Monsters");
     std::vector<std::string> availableStatblocks = aS.GetAvailableStatblocks();

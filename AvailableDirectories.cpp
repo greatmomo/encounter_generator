@@ -14,12 +14,11 @@ AvailableDirectories::AvailableDirectories(std::string targetDir) {
 
     for (auto& entry : availableDirectories) {
         eraseSubStr(entry, targetDirectory + "\\");
-        eraseSubStr(entry, ".txt");
     }
-
+    /*
     for (auto entry : availableDirectories) {
         std::cout << entry << std::endl;
-    }
+    }*/
 }
 
 std::vector<std::string> AvailableDirectories::GetAvailableDirectories() {

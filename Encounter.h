@@ -16,27 +16,11 @@
 class Encounter
 {
 public:
-	enum class Region {
-		Plains,
-		Forest,
-		Hills,
-		Mountains,
-		Marsh,
-		Desert,
-		Aquatic,
-		Underdark,
-		Abyss,
-		Town,
-		Dungeon,
-		Random
-	};
-
-	Encounter() : Encounter(Region::Random){} // If no region is specified, instantiate with random.
-	Encounter(Region);
+	//Encounter() : Encounter("Random") {} // If no region is specified, instantiate with random.
+	Encounter(std::vector<std::string>);
 	~Encounter() { delete description; delete environment; delete highlight; system("PAUSE"); };
 
-	Region getRegion();
-	std::string enumToText();
+	std::string getRegion();
 
 	int haveXMonsters(std::string);
 
@@ -47,7 +31,7 @@ public:
 	std::vector<std::string> highlightSubstrings(std::string);
 
 private:
-	Region region = Region::Random;
+	std::string region = "Random";
 
 	Description *description;
 	Environment *environment;
