@@ -4,11 +4,26 @@
 
 Encounter::Encounter(std::vector<std::string> availableDirectories) {
 	srand(int(time(NULL)));
-	while (region == "Random") { // Random is not allowed, reroll
-		// region = Region(rand() % static_cast<int>(Region::Random));
+	bool validInput = false;
+	while (validInput == false) {
+		std::cout << "Enter one of the following regions or \"Random\" to generate an encounter:\n";
 
-		// implement selection here
-		region = "Plains";
+		for (auto entry : availableDirectories) {
+			std::cout << entry << std::endl;
+		}
+
+		std::cout << ">>";
+		std::cin >> region;
+
+		// TODO Random selection option
+
+		for (auto entry : availableDirectories) {
+			if (region == entry) {
+				validInput = true;
+			}
+		}
+
+		system("cls");
 	}
 
 	// instantiate other classes

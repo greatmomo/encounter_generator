@@ -26,13 +26,7 @@ int main()
     }    
 }
 
-// Generate Region list from existing folders (Use AvailableDirectories.h)
-//      Scan Directories and create vector
-//      Print Vector and prompt input
-//      Check input against vector
-//          If valid, continue and generate Encounter
-//          Else, repeat loop
-// Make Region for generation selectable via text entry
+// Still need to implement the Random option
 // 
 // find out how to make windows (I have a bookmark) - it's impossible for some reason
 // add traps?
