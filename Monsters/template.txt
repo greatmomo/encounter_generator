@@ -1,23 +1,23 @@
-#name
-#type
-#ac
-#hp
-#speed
-#strength
-#dexterity
-#constitution
-#intelligence
-#wisdom
-#charisma
-#savingThrows
-#skills
-#damageResistances
-#damageImmunities
-#conditionImmunities
-#senses
-#languages
-#cr
-#proficiencyBonus
+# name
+# type
+# ac
+# hp
+# speed
+# strength
+# dexterity
+# constitution
+# intelligence
+# wisdom
+# charisma
+# savingThrows
+# skills
+# damageResistances
+# damageImmunities
+# conditionImmunities
+# senses
+# languages
+# cr
+# proficiencyBonus
 Abilities
 #Name# Description
 Actions
