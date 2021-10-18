@@ -27,6 +27,7 @@ int main()
             }
         }
 
+        // TODO: make this throw out invalid input
         std::cout << "Do you want to generate another encounter? Y/N...";
         char exitQuery;
         exitQuery = std::cin.get();
@@ -45,8 +46,6 @@ int main()
     } while (repeat);
 }
 
-// Add some sort of loop to the whole program?
-// 
 // find out how to make windows (I have a bookmark) - it's impossible for some reason
 // add traps?
 // add obstacles or other things with DCs?
