@@ -19,7 +19,7 @@ class Encounter
 public:
 	//Encounter() : Encounter("Random") {} // If no region is specified, instantiate with random.
 	Encounter(std::vector<std::string>);
-	~Encounter() { delete description; delete environment; delete highlight; system("PAUSE"); };
+	~Encounter() { delete description; delete environment; delete highlight;};
 
 	std::string getRegion();
 
