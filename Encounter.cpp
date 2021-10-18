@@ -13,9 +13,13 @@ Encounter::Encounter(std::vector<std::string> availableDirectories) {
 		}
 
 		std::cout << ">>";
-		std::cin >> region;
+		std::getline(std::cin, region);
 
-		// TODO Random selection option
+		if (region == "Random" || region == "") { // Handle random (and empty)
+			std::vector<std::string> temp;
+			std::sample(availableDirectories.begin(), availableDirectories.end(), std::back_inserter(temp), 1, std::mt19937{ std::random_device{}() });
+			region = temp[0];
+		}
 
 		for (auto entry : availableDirectories) {
 			if (region == entry) {
