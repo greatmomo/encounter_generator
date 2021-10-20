@@ -1,0 +1,29 @@
+Intellect Devourer
+Tiny aberration, lawful evil
+13
+36 (8d4 + 16)
+40 ft.
+ 4 (-3)
+16 (+3)
+14 (+2)
+12 (+1)
+14 (+2)
+20 (+5)
+#
+Stealth +5
+bludgeoning, piercing, and slashing from nonmagical weapons
+#
+blinded, exhaustion, frightened, paralyzed, poisoned
+blindsight 60 ft., passive Perception 12
+understands Deep Speech but can’t speak, telepathy 60 ft.
+3 (700 XP)
+#
+Abilities
+#Mindsense.# The intellect devourer is aware of the presence of creatures within 300 feet of it that have an Intelligence of 3 or higher. It knows the relative distance and direction of each creature, regardless of physical barriers. Creatures under the effects of magic that protects the mind cannot be detected by the intellect devourer.
+Actions
+#Multiattack.# The intellect devourer makes one attack with its claws and uses Consume Mind.
+#Claws.# Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.
+#Consume Mind.# The intellect devourer chooses one creature it can see within 30 feet of it that has an Intelligence of 3 or higher. The target must succeed on a DC 13 Intelligence saving throw or take 16 (3d10) psychic damage. If the target fails the saving throw by 5 or more, its Intelligence score is reduced to 0. The target is incapacitated until it regains at least 1 point of Intelligence (either from completing a long rest or from a lesser restoration spell).
+#Body Snatcher.# The intellect devourer chooses one incapacitated creature within 5 feet of it and engages it in a contest of Intelligence. The intellect devourer overpowers the creature’s mental defenses if it beats the target on a contested Intelligence check. The intellect devourer magically consumes the creature’s brain and teleports into its skull, taking full control of the target’s body. While inside the creature’s skull, the intellect devourer has total cover against attacks and other effects outside of the host. The intellect devourer retains its Intelligence, Wisdom, and Charisma scores, as well as its comprehension of language, its telepathy, and its traits. Otherwise, it inherits the target’s statistics, memories and knowledge, including spells and languages. If the host body drops to 0 hit points, the intellect devourer must leave the host. It can also be magically forced from the host’s body by means of a protection from evil and good spell being cast on the host. If the host’s devoured brain is restored (only possibly with a wish spell), the intellect devourer is forced out of the host. The intellect devourer can choose to leave the host at any time by spending 5 feet of its movement and then teleporting to an unoccupied space within 15 feet of the target. Unless its brain is restored within 1 round, the body dies.
+Legendary Actions
+endfile
