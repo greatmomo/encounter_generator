@@ -4,7 +4,7 @@
 
 Encounter::Encounter(std::vector<std::string> availableDirectories) {
 	srand(int(time(NULL)));
-	bool validInput = false;
+	validInput = false;
 	while (validInput == false) {
 		std::cout << "Enter one of the following regions or \"Random\" to generate an encounter:\n";
 

@@ -43,6 +43,8 @@ private:
 	std::string highlightText;
 
 	std::string monsterDelimiter = "#";
+
+	bool validInput;
 };
 
 #endif 
