@@ -46,11 +46,12 @@ int main()
             }
         }
         delete generatedEncounter;
+        system("cls");
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
     } while (repeat);
 }
 
-// Find out why the loop doesn't allow selection of region for subsequent runs.
-// 
 // find out how to make windows (I have a bookmark) - it's impossible for some reason
 // add traps?
 // add obstacles or other things with DCs?
